@@ -61,3 +61,8 @@ venv.bak/
 # IDEs
 .idea/
 .vscode/
+
+
+# Rust 
+Cargo.lock
+target/
