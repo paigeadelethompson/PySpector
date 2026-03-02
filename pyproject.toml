@@ -25,6 +25,15 @@ dependencies = [
     'importlib_resources; python_version < "3.9"',
 ]
 
+# Add development dependencies under [project.optional-dependencies]
+[project.optional-dependencies]
+dev = [
+    "black",   # Add black here
+    "pytest",  # Optional, add other dev tools as needed
+    "flake8",  # Optional, for code linting
+    "bs4"      # Test dependency
+]
+
 [project.scripts]
 pyspector = "pyspector.cli:cli"
 
@@ -41,6 +50,7 @@ where = ["src"]
 [tool.setuptools.package-data]
 pyspector = ["rules/*.toml"]
 
+# Rust extension module configuration
 [[tool.setuptools-rust.ext-modules]]
 target = "pyspector._rust_core"
 path = "src/pyspector/_rust_core/Cargo.toml"
